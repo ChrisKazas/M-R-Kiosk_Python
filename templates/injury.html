@@ -1,0 +1,55 @@
+{% include "index.html" %}
+<div id="injuryReport" class="jumbotron container" style="margin-top: 100px; background-color: #555">
+
+<!-- Jumbotron Heading -->
+<h1 class="display-7" style=" color: #fff">Injury Report Form</h1>
+<hr>
+
+    <!-- Work order description text area-->
+    <div>
+      <label><h5 style="color : #fff">Injury Incident Description:</h5></label>
+      <textarea class="form-control" id="injRptTxtArea" rows="3"></textarea>
+    </div><hr>
+
+
+<!-- Shops select boxes -->
+<div class="container" style="margin-left : 15rem">
+   <select id="injRptShopSelectBox" class="select-menu">
+     <option>Location</option>
+     {% for shop in shops %}
+       <option>{{ shop.shopName }}</option>
+     {% endfor %}
+   </select>
+
+   <!-- Shops dropup button -->
+   <select id="injRptMechSelectBox" class="select-menu">
+     <option>Employee Name</option>
+     {% for mech in mechs %}
+       <option>{{ mech.mechanicName }}</option>
+     {% endfor %}
+   </select>
+</div>
+
+
+     <div class="row" style=" margin-left: 175px">
+       <div id="injRptDatePicker" class="mt-5"></div>
+       <div class="col-7 ml-3" style="margin-top : 50px;">
+         <img src="{{url_for('static', filename ='images/injury.jpg')}}" height="80%" width="80%"></img>
+       </div>
+     </div>
+     <hr>
+
+<!-- Injury Report Save Button-->
+<button  id="injRptSaveBtn" type="button" class="btn btn-lg border border-rounded border-dark btn-theme"
+         style="float: right">
+   Input Report
+</button>
+
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,31 @@
+{% include "index.html" %}
+<img class="mt-5" src="{{ url_for('static', filename = 'images/mechanics.png') }}" style="margin-left : 34%;"></img>
+
+<div class="card mb-2 container" style="background-color : #555;">
+  <div class="card-body">
+      <h1 style="float: left; color: #fff">Add Mechanic</h1>
+
+    <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text border border-dark btn-theme" id="inputGroup-sizing-lg" style="font-size: 2opx">Mechanic Name</span>
+    </div>
+      <input id="addMechInput" "type="text" class="form-control" 
+             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    </div>
+    <button id="saveNewMechBtn" class="mt-2 btn btn-lg border border-rounded border-dark btn-theme" style="float:right">Save New Mechanic</button>
+
+  </div>
+</div>
+
+
+
+{% for mech in mechs%}
+<div class="card mb-2 container" style="background-color : #555;">
+  <div class="card-body">
+    <h1 style="float: left; color: #fff" data-mechId="{{mech._id}}">{{ mech.mechanicName}}</h1>
+    <i class="fa fa-trash-alt fa-3x mechDelBtn" style="float: right; color: #cc2929"></i >
+    <i class="fa fa-edit fa-3x mechEditBtn mr-2" style="float: right; color: #fff"></i >
+  </div>
+</div>
+{% endfor %}
+

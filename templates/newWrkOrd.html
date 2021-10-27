@@ -1,0 +1,91 @@
+{% include "index.html" %}
+<div id="newWrkOrd" style="background-color: #555" class="jumbotron container">
+
+<!-- Jumbotron Heading -->
+<h1 class="display-7" style="color : #fff">PIA Maintenance Work Order Generator</h1>
+<hr>
+
+    <!-- Work order description text area-->
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1" style="color : #fff"><h5>Work Order Description:</h5></label>
+      <textarea style="font-size : 25px;" class="form-control" id="newWoTxtArea" rows="3"></textarea>
+    </div> 
+
+
+<!-- Shops select boxes -->
+<div style="margin-left : 70px">
+   
+   <select id="newWOshopSelectBox" class="select-menu">
+     <option>Shops</option>
+     {% for shop in shops %}
+       <option>{{ shop.shopName }}</option>
+     {% endfor %}
+   </select>
+
+   <!-- Mechanics dropup button -->
+   <select id="newWOmechSelectBox" class="select-menu">
+     <option>Mechanics</option>
+     {% for mech in mechs %}
+       <option>{{ mech.mechanicName }}</option>
+     {% endfor %}
+   </select>
+
+   <!-- Priority select menu -->
+   <select id="newWOpriSelectBox" class="select-menu">
+     <option>Priority</option>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+   </select>
+   <br>
+   <br>
+   
+
+   <div class="row" style="margin-left : 50px">
+     <div class="col-5">
+       <div id="newWOdatePicker" class=""></div>
+     </div>
+     <div class="col-7" style="margin-top : 50px;">
+       <img src="{{url_for('static', filename ='images/computer.png')}}" height="70%" width="70%"></img>
+     </div>
+   </div>
+
+</div><!-- End -->
+<hr>
+
+<!-- Work Order Save Button-->
+<button  id="newWoSaveBtn" type="button" class="btn btn-lg border border-round border-dark btn-theme">Save Without Closing</button>
+<button  id="newWoCloseBtn" type="button" class="btn btn-lg border border-round border-dark btn-theme" 
+         style="float : right; margin-right : 15px;" data-toggle="modal" data-target="#newWorkOrderModal">
+  Close Out
+</button>
+<button  id="newWoReoccurBtn" type="button" class="btn btn-lg border border-round border-dark btn-theme" 
+         style="float : right; margin-right : 15px;">
+  Reoccurring
+</button>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newWorkOrderModal" tabindex="-1" role="dialog" aria-labelledby="newWorkOrderModalLabel" aria-hidden="true">
+  <div class="modal-dialog modPos"  role="document">
+    <div class="modal-content"  style="height: 500px; width : 800px;" >
+      <div class="modal-header"  style="background-color: #555;">
+        <h3 class="modal-title" id="newWorkOrderModalLabel" style="color : #fff;">Work Performed</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body border-top" style="background-color : #455;">
+        <div class="form-group">
+          <textarea class="form-control" id="workDoneModalTxtArea" rows="6"  style="font-size : 25px;"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer"  style="background-color: #555">
+        <button type="button" class="btn btn-lg border border-round border-dark btn-theme" data-dismiss="modal">Cancel</button>
+        <button id="woModalSaveBtn" type="button" class="btn btn-lg border border-round border-dark btn-theme" data-dismiss="modal">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+{% include "index.html" %}
+<div class="border border-dark rounded" style="background-color: #555; padding : 25px; margin-top: 25px; float : left; margin-left: 35px">
+
+   <!-- Mechanics dropup button -->
+   <h3 style="text-align: center; color: #fff">Search Criteria</h3><hr>
+   <select id="editWOmechSelectBox" class="select-menu" style="align-text: center">
+     <option>Mechanics</option>
+     {% for mech in mechs %}
+       <option>{{ mech.mechanicName }}</option>
+     {% endfor %}
+   </select><br><br>
+
+   <!-- Shops select boxes -->
+   <select id="editWOshopSelectBox" class="select-menu" >
+     <option>Shops</option>
+     {% for shop in shops %}
+       <option>{{ shop.shopName }}</option>
+     {% endfor %}
+   </select><br><br
+
+
+   <!-- Priority select menu -->
+   <select id="editWOpriSelectBox" class="select-menu" style="margin-top: 25px;">
+     <option>Priority</option>
+     <option>1</option>
+     <option>2</option>
+     <option>3</option>
+     <option>4</option>
+   </select><br><br>
+   <div id="searchWoDateStart" class=""></div><br><br>
+   <div id="searchWoDateEnd" class=""></div><br><br>
+   <button id="searchWoBtn" type="button" class="btn btn-lg border border-dark border-rounded btn-theme" 
+           style="color: #fff;">Search</button>
+
+</div>
+
+<img src="{{ url_for('static', filename = 'images/editWorkOrder.png') }}" height="50%" width="50%" style="margin-left: 11rem; margin-top : 1.5rem">
+
+{% for  shop, mech, wo in data %}
+<div class="col-8" style="float: right">
+  <div class="card mb-5 wo-card" style="width: 60rem; background-color: #555">
+    <div class="card-header">
+      <h2 id="#shopName{{wo._id}}" style="color:#fff" ]data-shopId={{wo.shopID}}>{{ shop }}</h2>
+    </div>
+    <div class="card-body">
+      <h4 class="card-title" id="mechId{{wo._id}}" style="color:#fff" data-mechId={{wo.mechanicID}}>{{ mech }}</h4>
+      <p class="card-text" id="woDateOpened{{wo._id}}" style="color:#fff" data-woDateOpened={{wo.dateOpened}}>{{ wo.dateOpened }}</p>
+      <h5 class="card-text" id="woWorkTodo{{wo._id}}" style="color:#fff" data-woWorkTodo={{wo.workTodo}}>{{ wo.workTodo }}</h5>
+      <textarea id="workDoneTxtArea{{wo._id}}" data-woId={{wo._id}} class="form-control mb-3 workDoneTxtArea" rows="3" style="font-size : 25px;"></textarea>
+      <button id="workDoneSaveBtn{{wo._id}}" type="button" class="btn btn-lg border border-round border-dark workDoneSaveBtn btn-theme" style="float:right">Save & Close</button>
+      <button id="woCloseButton{{wo._id}}" type="button" class="btn btn-lg border border-round border-dark btn-theme  woCloseBtn">Close Out</button>
+      <button id="workDoneCancelBtn{{wo._id}}" type="button" class="btn btn-lg border border-round border-dark mr-3 workDoneCancelBtn btn-theme" style="float: right;">Cancel</button>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+

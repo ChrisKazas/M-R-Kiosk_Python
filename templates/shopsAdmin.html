@@ -1,0 +1,35 @@
+{% include "index.html" %}
+
+
+<img class="mt-5" src="{{ url_for('static', filename = 'images/shops.png') }}" style="margin-left : 40%;"></img>
+
+
+<div class="card mb-2 container" style="background-color : #555;">
+  <div class="card-body">
+      <h1 style="float: left; color: #fff">Add Shop</h1>
+
+    <div class="input-group input-group-lg">
+    <div class="input-group-prepend">
+      <span class="input-group-text border border-dark btn-theme" id="inputGroup-sizing-lg" style="font-size: 2opx">Shop Name</span>
+    </div>
+      <input id="addShopInput" "type="text" class="form-control" 
+             aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+    </div>
+    <button id="saveNewShopBtn" class="mt-2 btn btn-lg border rounded border-dark btn-theme" style="float:right">Save New Shop</button>
+
+  </div>
+</div>
+
+{% for shop in shops%}
+<div class="card mb-2 container" style="background-color : #555;">
+  <div class="card-body">
+    <h1 class="mt-2" style="float: left; color: #fff" data-shopId="{{shop._id}}">{{ shop.shopName}}</h1>
+    <i class="fa fa-trash-alt fa-3x shopDelBtn btn-theme border rounded border-dark pt-2 pr-2 pl-2 pb-2" 
+       style="float: right; color: #cc2929; background : -webkit-gradient(linear,left top, left bottom,  from(#455), to(#457));"></i >
+    <i class="fa fa-edit fa-3x shopEditBtn btn-theme mr-2 border rounded border-dark pt-2 pr-2 pl-2 pb-2" 
+       style="float: right; color: #fff; background : -webkit-gradient(linear,left top, left bottom,  from(#455), to(#457));"></i >
+  </div>
+</div>
+
+{% endfor %}
+

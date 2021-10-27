@@ -1,0 +1,77 @@
+{%  include "index.html"%}
+<div id="homeImg" class="" style="margin-top:6rem">
+<div id="homeDate" >
+  <img src="{{url_for('static', filename ='images/welcomeTSPIA.png')}}" height="95%" width="95%"></img>
+</div>
+<h1 class="mt-2" style="text-align : center;">Today is {{ today }}</h1>
+
+<!--
+
+<div class="container" style="margin-left: 22rem; margin-top:3rem;">
+  <section class="main">
+
+       <input type="radio" name="resize-graph" id="graph-normal" checked="checked"/>
+            <ul class="graph-container">
+              <li>
+                <span>Priority 1</span>
+                  <div class="bar-wrapper">
+                    <div class="bar-container">
+                      <div class="bar-background"></div>
+                      <div class="bar-inner">17</div>
+                      <div class="bar-foreground"></div>
+                    </div>
+                  </div>
+              </li>
+              <li>
+                <span>Priority 2</span>
+                  <div class="bar-wrapper">
+                    <div class="bar-container">
+                      <div class="bar-background"></div>
+                      <div class="bar-inner">50</div>
+                      <div class="bar-foreground"></div>
+                    </div>
+                  </div>
+              </li>
+              <li>
+              <span>Priority 3</span>
+                <div class="bar-wrapper">
+                  <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner">75</div>
+                    <div class="bar-foreground"></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+              <span>Priority 4</span>
+                <div class="bar-wrapper"> 
+                  <div class="bar-container">
+                    <div class="bar-background"></div>
+                    <div class="bar-inner" style="height: 50%"></div>
+                    <div class="bar-foreground"></div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <ul class="graph-marker-container">
+                  <li id="priLi1" style="bottom:25%;">><span>{{ pris[0] }}</span></li>
+                  <li style="bottom:50%;"><span>{{ pris[1] }}</span></li>
+                  <li style="bottom:75%;"><span>{{ pris[2] }}</span></li>
+                  <li style="bottom:100%;"><span>100%</span></li>
+                </ul>
+              </li>
+            </ul>
+  </section>
+</div>
+-->
+
+  <a href="/newWrkOrd">
+    <img src="{{url_for('static', filename ='images/newWorkOrder.png')}}" height="25%" width="25%" 
+         style="margin-top : 8rem; margin-left : 22rem" ></img>
+  </a>
+  <a href="/editWorkOrder">
+    <img src="{{url_for('static', filename ='images/editWorkOrder.png')}}" height="25%" width="25%" 
+         style="margin-top : 8rem; margin-left : 75px"></img>
+  </a>
+</div>
+

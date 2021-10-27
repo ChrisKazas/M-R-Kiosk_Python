@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/graph.css') }}>    
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/css/solid.min.css') }}>    
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/css/fontawesome.min.css') }}>    
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/bootstrap.min.css') }}>   
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/jquery-ui.theme.min.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/jquery-ui.css') }}>
+    <link rel="stylesheet" href={{ url_for('static', filename ='css/index.css') }}>    
+
+    <title>MP2 Kiosk</title>
+  </head>
+  <header>
+    {% include "navbar.html"%}
+    {% block navbar %}{% endblock %}
+  </header> 
+
+ <body>
+    <script src={{ url_for('static', filename = 'js/jquery.min.js') }}></script>
+    <script src={{ url_for('static', filename = 'js/jquery-ui.min.js') }}></script>
+    <script src={{ url_for('static', filename = 'js/popper.min.js') }}></script>
+    <script src={{ url_for('static', filename = 'js/bootstrap.min.js') }}></script>  
+    <script src={{ url_for('static', filename = 'js/client.js') }}></script>
+  </body>
+</html>

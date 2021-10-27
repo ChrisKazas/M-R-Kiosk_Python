@@ -1,0 +1,53 @@
+body{
+background : #455;
+}
+#homeImg{
+
+}
+
+#homeDate{
+text-align : center;
+}
+
+#newWrkOrd{
+margin-top : 5rem;
+}
+
+#wrkOrdDescTA{
+width : 100%
+}
+
+.nav-link-font-size{
+font-size : 20px;
+margin-top : .4rem;
+color: #fff;
+margin-right : 1rem;
+background-color : #455;
+text-decoration : none
+}
+
+.btn-theme{
+/*background-color : #455;*/
+background : -webkit-gradient(linear,left top, left bottom,  from(#455), to(#457));
+color : #fff;
+}
+
+.btn-theme:hover{
+background-color : #0c5294;
+color : #fff;
+-webkit-box-shadow : 5px 5px 5px 5px #333333;
+
+}
+
+#searchWoSearchBtn:hover{
+background-color : #0c5294;
+color : #fff
+ 
+}
+
+.modPos{
+position : absolute;
+top: 300px;
+left: 400px;
+
+}

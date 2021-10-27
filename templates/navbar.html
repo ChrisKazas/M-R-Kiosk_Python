@@ -1,0 +1,35 @@
+{% block navbar %}
+<nav class="navbar navbar-expand-lg border-bottom border-top border-dark" style="height :100px; background-color: #555; color : #fff">
+  <a class="navbar-brand" href="/"><img style="padding-top : 2rem "
+     src="{{url_for('static', filename ='images/MP2:Kiosk.png')}}" height='50%' width='50%'></img>
+  </a>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav ml-auto" >
+      <li class="nav-item active">
+        <a class="nav-link border border-dark border-rounded rounded-lg nav-link-font-size btn-theme" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link border border-dark border-rounded rounded-lg nav-link-font-size  btn-theme" href="/newWrkOrd">New Work Order</a>
+      </li>
+      <li class="nav-item">
+        <a id="editWorkOrderLink" class="nav-link border border-dark border-rounded rounded-lg nav-link-font-size  btn-theme" href="/editWorkOrder">Edit Work Order</a>
+      </li>
+      <li class="nav-item">
+        <a id="injuryReportLink" class="nav-link border border-dark border-rounded rounded-lg nav-link-font-size  btn-theme" href="/injuryReport">Injury Report</a>
+      </li>
+      <li>
+        <div class="btn-group dropleft">
+          <button type="button" class="btn btn-lg btn-secondary dropdown-toggle border border-dark border-rounded nav-link-font-size  btn-theme" 
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+          </button>
+          <div class="dropdown-menu pt-3 pl-3 pr-3 pb-3" style="background-color: #555">
+            <a class="dropdown-item border border-dark border-rounded rounded-lg nav-link-font-size btn-theme" href="/shopsAdmin">Add/Edit Shop</a>
+            <a class="dropdown-item border border-dark border-rounded rounded-lg nav-link-font-size btn-theme" href="/mechsAdmin">Add/Edit Mechanic</a>
+          </div>
+        </div
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
